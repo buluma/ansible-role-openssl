@@ -4,7 +4,7 @@ Make openssl certificates.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-openssl/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-openssl)|[![quality](https://img.shields.io/ansible/quality/57863)](https://galaxy.ansible.com/buluma/openssl)|[![downloads](https://img.shields.io/ansible/role/d/57863)](https://galaxy.ansible.com/buluma/openssl)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/releases/)|
+|[![github](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-openssl/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-openssl)|[![quality](https://img.shields.io/ansible/quality/57914)](https://galaxy.ansible.com/buluma/openssl)|[![downloads](https://img.shields.io/ansible/role/d/57914)](https://galaxy.ansible.com/buluma/openssl)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
