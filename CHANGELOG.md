@@ -58,7 +58,6 @@
 
 **Merged pull requests:**
 
-- Update todo.yml [\#9](https://github.com/buluma/ansible-role-openssl/pull/9) ([buluma](https://github.com/buluma))
 - GitHub Pipeline Test [\#4](https://github.com/buluma/ansible-role-openssl/pull/4) ([buluma](https://github.com/buluma))
 - Simpler Gitab CI [\#3](https://github.com/buluma/ansible-role-openssl/pull/3) ([buluma](https://github.com/buluma))
 
@@ -68,6 +67,7 @@
 
 **Merged pull requests:**
 
+- Update todo.yml [\#9](https://github.com/buluma/ansible-role-openssl/pull/9) ([buluma](https://github.com/buluma))
 - Bump alstr/todo-to-issue-action from 2.3 to 4.5.4 [\#2](https://github.com/buluma/ansible-role-openssl/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/galaxy-action from 1.0.1 to 1.1.0 [\#1](https://github.com/buluma/ansible-role-openssl/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
