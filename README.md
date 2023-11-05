@@ -2,9 +2,9 @@
 
 Make openssl certificates.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-openssl/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-openssl)|[![quality](https://img.shields.io/ansible/quality/57914)](https://galaxy.ansible.com/buluma/openssl)|[![downloads](https://img.shields.io/ansible/role/d/57914)](https://galaxy.ansible.com/buluma/openssl)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-openssl/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-openssl/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-openssl/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-openssl)|[![downloads](https://img.shields.io/ansible/role/d/4788)](https://galaxy.ansible.com/buluma/openssl)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-openssl.svg)](https://github.com/buluma/ansible-role-openssl/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
