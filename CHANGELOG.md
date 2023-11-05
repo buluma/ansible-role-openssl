@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.1](https://github.com/buluma/ansible-role-openssl/tree/2.0.1) (2023-05-30)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.0...2.0.1)
+
 ## [2.0.0](https://github.com/buluma/ansible-role-openssl/tree/2.0.0) (2022-10-06)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/1.0.10...2.0.0)
