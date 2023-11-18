@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-openssl/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.1...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#20](https://github.com/buluma/ansible-role-openssl/issues/20)
+- Update action [\#19](https://github.com/buluma/ansible-role-openssl/issues/19)
+
 ## [2.0.1](https://github.com/buluma/ansible-role-openssl/tree/2.0.1) (2023-05-30)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.0...2.0.1)
