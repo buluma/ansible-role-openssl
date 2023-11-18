@@ -1,4 +1,4 @@
-# [openssl](#openssl)
+# [Ansible role openssl](#openssl)
 
 Make openssl certificates.
 
