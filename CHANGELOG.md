@@ -1,5 +1,19 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-openssl/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.3...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#23](https://github.com/buluma/ansible-role-openssl/issues/23)
+- Update action [\#22](https://github.com/buluma/ansible-role-openssl/issues/22)
+- rebuild action [\#21](https://github.com/buluma/ansible-role-openssl/issues/21)
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 3 to 4 [\#24](https://github.com/buluma/ansible-role-openssl/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.0.3](https://github.com/buluma/ansible-role-openssl/tree/2.0.3) (2023-12-23)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.2...2.0.3)
