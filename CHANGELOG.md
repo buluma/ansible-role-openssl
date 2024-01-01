@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-openssl/tree/HEAD)
+## [2.0.4](https://github.com/buluma/ansible-role-openssl/tree/2.0.4) (2023-12-27)
 
-[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.3...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.3...2.0.4)
 
 **Closed issues:**
 
