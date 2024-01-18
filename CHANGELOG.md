@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-openssl/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.1.0...HEAD)
+
+**Merged pull requests:**
+
+- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#29](https://github.com/buluma/ansible-role-openssl/pull/29) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.1.0](https://github.com/buluma/ansible-role-openssl/tree/2.1.0) (2024-01-02)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.0.4...2.1.0)
