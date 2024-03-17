@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#31](https://github.com/buluma/ansible-role-openssl/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#30](https://github.com/buluma/ansible-role-openssl/pull/30) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [2.2.0](https://github.com/buluma/ansible-role-openssl/tree/2.2.0) (2024-01-20)
@@ -94,11 +95,14 @@
 **Merged pull requests:**
 
 - redule loop output [\#8](https://github.com/buluma/ansible-role-openssl/pull/8) ([buluma](https://github.com/buluma))
-- Bump buluma/molecule-action from 4.0.5 to 4.0.6 [\#7](https://github.com/buluma/ansible-role-openssl/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.4](https://github.com/buluma/ansible-role-openssl/tree/1.0.4) (2022-02-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/1.0.3...1.0.4)
+
+**Merged pull requests:**
+
+- Bump buluma/molecule-action from 4.0.5 to 4.0.6 [\#7](https://github.com/buluma/ansible-role-openssl/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.3](https://github.com/buluma/ansible-role-openssl/tree/1.0.3) (2022-02-11)
 
