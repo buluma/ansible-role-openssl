@@ -93,10 +93,6 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/1.0.4...1.0.5)
 
-**Merged pull requests:**
-
-- redule loop output [\#8](https://github.com/buluma/ansible-role-openssl/pull/8) ([buluma](https://github.com/buluma))
-
 ## [1.0.4](https://github.com/buluma/ansible-role-openssl/tree/1.0.4) (2022-02-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/1.0.3...1.0.4)
@@ -127,6 +123,7 @@
 
 **Merged pull requests:**
 
+- redule loop output [\#8](https://github.com/buluma/ansible-role-openssl/pull/8) ([buluma](https://github.com/buluma))
 - GitHub Pipeline Test [\#4](https://github.com/buluma/ansible-role-openssl/pull/4) ([buluma](https://github.com/buluma))
 - Simpler Gitab CI [\#3](https://github.com/buluma/ansible-role-openssl/pull/3) ([buluma](https://github.com/buluma))
 
