@@ -1,16 +1,28 @@
 ---
 # tasks file for openssl
-- name: Check if EXTERNALLY-MANAGED file exists
+- name: Check if python3.11 EXTERNALLY-MANAGED file exists
   ansible.builtin.stat:
     path: /usr/lib/python3.11/EXTERNALLY-MANAGED
-  register: externally_managed_file
+  register: externally_managed_file_py311
 
-- name: Rename EXTERNALLY-MANAGED file if it exists
+- name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
   ansible.builtin.command:
     cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-  when: externally_managed_file.stat.exists
+  when: externally_managed_file_py311.stat.exists
   args:
     creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+
+- name: Check if python3.12 EXTERNALLY-MANAGED file exists
+  ansible.builtin.stat:
+    path: /usr/lib/python3.12/EXTERNALLY-MANAGED
+  register: externally_managed_file_py312
+
+- name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
+  ansible.builtin.command:
+    cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+  when: externally_managed_file_py312.stat.exists
+  args:
+    creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
 
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
