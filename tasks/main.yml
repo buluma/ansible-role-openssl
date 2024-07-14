@@ -21,7 +21,6 @@
   ansible.builtin.debug:
     var: python3_executable
 
-
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
   run_once: true
