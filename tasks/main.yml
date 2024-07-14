@@ -5,11 +5,13 @@
   ansible.builtin.command: which python
   register: python_executable
   ignore_errors: true
+  changed_when: false
 
 - name: Check if python3 is installed
   ansible.builtin.command: which python3
   register: python3_executable
   ignore_errors: true
+  changed_when: false
 
 - name: Debug Python executable path
   ansible.builtin.debug:
