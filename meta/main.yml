@@ -14,12 +14,15 @@ galaxy_info:
     - name: EL
       versions:
         - "8"
+        - "9"
     - name: Debian
       versions:
         - all
     - name: Fedora
       versions:
-        - all
+        - "38"
+        - "39"
+        - "40"
     - name: opensuse
       versions:
         - all
@@ -28,9 +31,8 @@ galaxy_info:
         - focal
         - bionic
         - jammy
-    - name: Kali
-      versions:
-        - all
+        - noble
+        - lunar
 
   galaxy_tags:
     - openssl
