@@ -1,6 +1,13 @@
 ---
 # tasks file for openssl
 
+- name: Rename EXTERNALLY-MANAGED file
+  ansible.builtin.command:
+    cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+  become: true
+  args:
+    creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
   run_once: true
@@ -14,7 +21,7 @@
 - name: Install pip packages
   ansible.builtin.pip:
     name: "{{ openssl_pip_packages }}"
-  break_system_packages: true
+    break_system_packages: true
 
 - name: Create key directory
   ansible.builtin.file:
