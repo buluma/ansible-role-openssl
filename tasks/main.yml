@@ -11,14 +11,10 @@
     name: "{{ openssl_requirements }}"
     state: present
 
-# - name: Install pip packages
-#   ansible.builtin.pip:
-#     name: "{{ openssl_pip_packages }}"
-
 - name: Install pip packages
-  ansible.builtin.package:
+  ansible.builtin.pip:
     name: "{{ openssl_pip_packages }}"
-    state: present
+  break_system_packages: true
 
 - name: Create key directory
   ansible.builtin.file:
