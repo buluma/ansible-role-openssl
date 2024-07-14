@@ -1,12 +1,16 @@
 ---
 # tasks file for openssl
+# - name: Ignore PEP 668 because it is stupid.
+#   ansible.builtin.file:
+#     path: /usr/lib/python3.11/EXTERNALLY-MANAGED
+#     state: absent
 
-- name: Rename EXTERNALLY-MANAGED file
-  ansible.builtin.command:
-    cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-  become: true
-  args:
-    creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+# - name: Ignore PEP 668 because it is stupid.
+#   ansible.builtin.command:
+#     cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+#   become: true
+#   args:
+#     creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
 
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
