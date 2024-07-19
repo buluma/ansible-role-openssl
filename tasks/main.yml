@@ -15,11 +15,11 @@
 
 - name: Debug Python executable path
   ansible.builtin.debug:
-    var: python_executable
+    var: python_executable.stdout
 
 - name: Debug Python3 executable path
   ansible.builtin.debug:
-    var: python3_executable
+    var: python3_executable.stdout
 
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
