@@ -1,5 +1,9 @@
 # Changelog
 
+## [24.7.14](https://github.com/buluma/ansible-role-openssl/tree/24.7.14) (2024-07-14)
+
+[Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/24.3.31...24.7.14)
+
 ## [24.3.31](https://github.com/buluma/ansible-role-openssl/tree/24.3.31) (2024-03-30)
 
 [Full Changelog](https://github.com/buluma/ansible-role-openssl/compare/2.2.0...24.3.31)
