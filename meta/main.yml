@@ -1,39 +1,29 @@
----
 galaxy_info:
   author: buluma
   role_name: openssl
   description: Make openssl certificates.
   license: Apache-2.0
   company: ShadowNet
-  min_ansible_version: "2.17"
-
+  min_ansible_version: '2.17'
   platforms:
-    - name: Alpine
-      versions:
-        - all
-    - name: EL
-      versions:
-        - "8"
-        - "9"
-    - name: Debian
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - "38"
-        - "39"
-        - "40"
-    - name: opensuse
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - focal
-        - bionic
-        - jammy
-        - noble
-
+  - name: Alpine
+    versions:
+    - all
+  - name: EL
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: opensuse
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
   galaxy_tags:
-    - openssl
-
+  - openssl
 dependencies: []
