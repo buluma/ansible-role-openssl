@@ -35,7 +35,7 @@
         creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
 
   roles:
-    - role: ansible-role-openssl
+    - role: buluma.openssl
       openssl_items:
         - name: my_openssl_key
           common_name: my.example.com
