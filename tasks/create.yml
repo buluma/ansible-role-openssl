@@ -1,5 +1,4 @@
 ---
-
 - name: create | Create ssl key
   community.crypto.openssl_privatekey:
     path: "{{ openssl_key_directory }}/{{ item.name }}.key"
