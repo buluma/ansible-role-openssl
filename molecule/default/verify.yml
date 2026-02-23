@@ -1,10 +1,10 @@
 ---
-  - name: Verify
-    hosts: all
-    become: true
-    gather_facts: false
+- name: Verify
+  hosts: all
+  become: true
+  gather_facts: false
 
-    tasks:
-      - name: try openssl version
-        ansible.builtin.command:
-          cmd: openssl version
+  tasks:
+  - name: try openssl version
+    ansible.builtin.command:
+      cmd: openssl version
