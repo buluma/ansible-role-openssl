@@ -12,62 +12,64 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: Converge
-  hosts: all
-  become: true
-  gather_facts: true
+  - name: Converge
+    hosts: all
+    become: true
+    gather_facts: true
 
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=yes cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-      changed_when: false
+    pre_tasks:
+      - name: Update apt cache.
+        apt: update_cache=yes cache_valid_time=600
+        when: ansible_os_family == 'Debian'
+        changed_when: false
 
-    - name: Check if python3.11 EXTERNALLY-MANAGED file exists
-      ansible.builtin.stat:
-        path: /usr/lib/python3.11/EXTERNALLY-MANAGED
-      register: externally_managed_file_py311
+      - name: Check if python3.11 EXTERNALLY-MANAGED file exists
+        ansible.builtin.stat:
+          path: /usr/lib/python3.11/EXTERNALLY-MANAGED
+        register: externally_managed_file_py311
 
-    - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
-      ansible.builtin.command:
-        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-      when: externally_managed_file_py311.stat.exists
-      args:
-        creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+      - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
+        ansible.builtin.command:
+          cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
+            /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+        when: externally_managed_file_py311.stat.exists
+        args:
+          creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
 
-    - name: Check if python3.12 EXTERNALLY-MANAGED file exists
-      ansible.builtin.stat:
-        path: /usr/lib/python3.12/EXTERNALLY-MANAGED
-      register: externally_managed_file_py312
+      - name: Check if python3.12 EXTERNALLY-MANAGED file exists
+        ansible.builtin.stat:
+          path: /usr/lib/python3.12/EXTERNALLY-MANAGED
+        register: externally_managed_file_py312
 
-    - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
-      ansible.builtin.command:
-        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.old
-      when: externally_managed_file_py312.stat.exists
-      args:
-        creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+      - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
+        ansible.builtin.command:
+          cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
+            /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+        when: externally_managed_file_py312.stat.exists
+        args:
+          creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
 
-  roles:
-    - role: buluma.openssl
-      openssl_items:
-        - name: my_openssl_key
-          common_name: my.example.com
+    roles:
+      - role: buluma.openssl
+        openssl_items:
+          - name: my_openssl_key
+            common_name: my.example.com
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-openssl/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: Prepare
-  hosts: all
-  become: true
-  gather_facts: false
+  - name: Prepare
+    hosts: all
+    become: true
+    gather_facts: false
 
-  roles:
-    - role: buluma.bootstrap
-    - role: buluma.buildtools
-    - role: buluma.epel
-    - role: buluma.python_pip
+    roles:
+      - role: buluma.bootstrap
+      - role: buluma.buildtools
+      - role: buluma.epel
+      - role: buluma.python_pip
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -90,13 +92,16 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # location is set in `vars/main.yml`.
 
 # This directory stores sensitive objects. (key, p12 and pkcs12)
-openssl_key_directory: "{{ _openssl_key_directory[ansible_os_family] | default(_openssl_key_directory['default']) }}"
+openssl_key_directory: "{{ _openssl_key_directory[ansible_os_family] | default(_openssl_key_directory['default'])
+  }}"
 
 # This directory stores public, non-persistent objects. (csr)
-openssl_csr_directory: "{{ _openssl_csr_directory[ansible_os_family] | default(_openssl_csr_directory['default']) }}"
+openssl_csr_directory: "{{ _openssl_csr_directory[ansible_os_family] | default(_openssl_csr_directory['default'])
+  }}"
 
 # This directory stores public, persistent objects. (crt)
-openssl_crt_directory: "{{ _openssl_crt_directory[ansible_os_family] | default(_openssl_crt_directory['default']) }}"
+openssl_crt_directory: "{{ _openssl_crt_directory[ansible_os_family] | default(_openssl_crt_directory['default'])
+  }}"
 
 # You can change the owner and group of file created by this role.
 openssl_file_owner: root
