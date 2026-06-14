@@ -5,6 +5,7 @@
   gather_facts: false
 
   tasks:
-    - name: try openssl version
+    - name: Try openssl version
       ansible.builtin.command:
         cmd: openssl version
+      changed_when: false

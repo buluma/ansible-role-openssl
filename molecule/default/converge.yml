@@ -6,7 +6,9 @@
 
   pre_tasks:
     - name: Update apt cache.
-      apt: update_cache=yes cache_valid_time=600
+      ansible.builtin.apt:
+        update_cache: "yes"
+        cache_valid_time: "600"
       when: ansible_facts['os_family'] == 'Debian'
       changed_when: false
 
@@ -17,8 +19,7 @@
 
     - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
       ansible.builtin.command:
-        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED
-          /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
       when: externally_managed_file_py311.stat.exists
       args:
         creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
@@ -30,8 +31,7 @@
 
     - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
       ansible.builtin.command:
-        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED
-          /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.old
       when: externally_managed_file_py312.stat.exists
       args:
         creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
