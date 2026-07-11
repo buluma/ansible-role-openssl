@@ -19,8 +19,10 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
   pre_tasks:
     - name: Update apt cache.
-      apt: update_cache=yes cache_valid_time=600
-      when: ansible_os_family == 'Debian'
+      ansible.builtin.apt:
+        update_cache: "yes"
+        cache_valid_time: "600"
+      when: ansible_facts['os_family'] == 'Debian'
       changed_when: false
 
     - name: Check if python3.11 EXTERNALLY-MANAGED file exists
@@ -30,8 +32,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
     - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
       ansible.builtin.command:
-        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED
-          /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
       when: externally_managed_file_py311.stat.exists
       args:
         creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
@@ -43,8 +44,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
     - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
       ansible.builtin.command:
-        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED
-          /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.old
       when: externally_managed_file_py312.stat.exists
       args:
         creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
@@ -64,6 +64,13 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   hosts: all
   become: true
   gather_facts: false
+
+  pre_tasks:
+    - name: Install sudo if missing
+      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      become: false
+      changed_when: false
+      failed_when: false
 
   roles:
     - role: buluma.bootstrap
@@ -92,13 +99,13 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # location is set in `vars/main.yml`.
 
 # This directory stores sensitive objects. (key, p12 and pkcs12)
-openssl_key_directory: "{{ _openssl_key_directory[ansible_os_family] | default(_openssl_key_directory['default']) }}"
+openssl_key_directory: "{{ _openssl_key_directory[ansible_facts['os_family']] | default(_openssl_key_directory['default']) }}"
 
 # This directory stores public, non-persistent objects. (csr)
-openssl_csr_directory: "{{ _openssl_csr_directory[ansible_os_family] | default(_openssl_csr_directory['default']) }}"
+openssl_csr_directory: "{{ _openssl_csr_directory[ansible_facts['os_family']] | default(_openssl_csr_directory['default']) }}"
 
 # This directory stores public, persistent objects. (crt)
-openssl_crt_directory: "{{ _openssl_crt_directory[ansible_os_family] | default(_openssl_crt_directory['default']) }}"
+openssl_crt_directory: "{{ _openssl_crt_directory[ansible_facts['os_family']] | default(_openssl_crt_directory['default']) }}"
 
 # You can change the owner and group of file created by this role.
 openssl_file_owner: root
@@ -130,17 +137,16 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[Alpine](https://hub.docker.com/r/robertdebock/alpine)|all|
-|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
-|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
-|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
-The minimum version of Ansible required is 2.17, tests have been done on:
+The minimum version of Ansible required is 2.12, tests have been done on:
 
 - The previous version.
 - The current version.
@@ -156,6 +162,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-openssl/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-openssl
